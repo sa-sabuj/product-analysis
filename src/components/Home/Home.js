@@ -1,14 +1,21 @@
 import { logDOM } from '@testing-library/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Review from '../Review/Review';
 
 
 const Home = () => {
+    const [reviews, setReviews] = useState([]);
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/comments')
+        .then(res => res.json())
+        .then (data => setReviews(data));
+    }, [])
     return (
         <div>
             <section className='header-area grid grid-cols-2 gap-4" m-20'>
                     <div className='text-area'>
-                        <h2 className='text-2xl font-bold mb-5'>
-                            Lets talk about  <br /> <span className='text-5xl text-blue-500'>Delicious Food!!!!</span>
+                        <h2 className='text-4xl font-bold mb-5'>
+                            Lets talk about  <br /> <span className='mt-5 text-5xl text-blue-500'>Delicious Food!!!!</span>
                         </h2>
                         <p>
                             Eating a healthy dite is not about strict limitations, staying unrealistically thin, or depriving yourself of the foods you love.Reaher , it's about feeling great, having more energy, improving your health, and boosting your mood. Healthy eating doesn't have to be overly complicated. If you feel overwhelmed by all the conflicting nutrition and dite advice out there , you're not aline.
@@ -24,6 +31,10 @@ const Home = () => {
             <section>
                 <div >
                     <h2 className='text-5xl text-center mb-5'>Customer reviews</h2>
+                    {/* <p>Customer review: {reviews.length}</p> */}
+                    {
+                        reviews.map(review => <Review key={review.id} review={review}></Review>)
+                    }
                 </div>
             </section>
         </div>
