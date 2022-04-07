@@ -7,8 +7,8 @@ const Header = () => {
         <div>
     
             
-            <nav>
-                <Link to='/home' className='m-5 text-dark text-2xl p-4 rounded-md bg-sky-600 hover:bg-sky-700'>Home</Link>
+            <nav className='text-center m-8'>
+                <Link to='/home' className='m-5 text-white text-2xl p-4 rounded-md bg-blue-500 hover:bg-sky-700'>Home</Link>
                 <Link to='/reviews' className='m-5 text-gray-900 text-2xl'>Reviews</Link>
                 <Link to='/deshboard' className='m-5 text-gray-900 text-2xl'>Deshboard</Link>
                 <Link to='/blogs' className='m-5 text-gray-900 text-2xl'>Blogs</Link>
