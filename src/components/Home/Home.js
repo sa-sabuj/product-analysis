@@ -1,6 +1,6 @@
-import { logDOM } from '@testing-library/react';
+
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import useReviews from '../../hooks/useReviews';
 import Review from '../Review/Review';
 
