@@ -1,16 +1,19 @@
 import { logDOM } from '@testing-library/react';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import useReviews from '../../hooks/useReviews';
 import Review from '../Review/Review';
 
 
 const Home = () => {
-    const [reviews, setReviews] = useState([]);
-    useEffect(() => {
-        fetch('reviews.json')
-            .then(res => res.json())
-            .then(data => setReviews(data));
-    }, [])
+    const [reviews, setReviews] = useReviews()
+     
+    // const [reviews, setReviews] = useState([]);
+    // useEffect(() => {
+    //     fetch('reviews.json')
+    //         .then(res => res.json())
+    //         .then(data => setReviews(data));
+    // }, [])
     return (
         <div>
             <section className='header-area grid grid-cols-2 gap-4" m-20'>
@@ -33,7 +36,7 @@ const Home = () => {
             </section>
             <section>
                 <div >
-                    <h2 className='text-5xl text-center mb-5'>Customer reviews</h2>
+                    <h2 className='text-5xl text-center mb-5'>Customer reviews: {reviews.length}</h2>
                     {/* <p>Customer review: {reviews.length}</p> */}
                     {
                         reviews.map(review => <Review key={review.id} review={review}></Review>)
