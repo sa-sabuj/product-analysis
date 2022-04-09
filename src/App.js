@@ -8,6 +8,8 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import NotFound from './components/NotFound/NotFound';
 import Reviews from './components/Reviews/Reviews';
+import Images from './components/Images/image1.jpeg'
+
 
 function App() {
   return (
