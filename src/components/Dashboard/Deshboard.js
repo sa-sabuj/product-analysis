@@ -2,8 +2,8 @@ import React from 'react';
 
 const Deshboard = () => {
     return (
-        <div>
-            <h4>this is dashboard</h4>
+        <div className='text-center  mt-20'>
+            <h4 className='text-5xl '>This is Rechart </h4>
         </div>
     );
 };
