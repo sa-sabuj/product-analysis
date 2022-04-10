@@ -1,9 +1,13 @@
 import React from 'react';
+import SimpleBarChart from '../SimpleBarChart/SimpleBarChart';
+import SimpleLineChart from '../SimpleLineChart/SimpleLineChart';
 
 const Deshboard = () => {
     return (
         <div className='text-center  mt-20'>
-            <h4 className='text-5xl '>This is Rechart </h4>
+            <SimpleLineChart></SimpleLineChart>
+            {/* <SimpleLineChart></SimpleLineChart> */}
+            <SimpleBarChart></SimpleBarChart>
         </div>
     );
 };
